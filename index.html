@@ -9,14 +9,13 @@
  <img src="assets/profile.jpg" alt="Kimtai" class="profile-pic">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
   <div class="container">
     <header>
       <h1>Dev Kim</h1>
       <p>Web developer</p>
     </header>
-    
     <section class="bio">
       <h2>About Me</h2>
       <p> 
@@ -32,7 +31,33 @@
     <li>Git</li>
   </ul>
 </section>
-<button id="darkModeToggle">🌙 Dark Mode</button>
+<section class="projects">
+  <h2>My Code Projects</h2>
+  <div class="project" id="github-projects">
+    <!-- Dynamically loaded from GitHub API -->
+    <p>Loading projects...</p>
+  </div>
+  <div class="skill-bar-container">
+  <h3>HTML/CSS</h3>
+  <div class="skill-bar"><span style="width: 90%"></span></div>
+  <h3>JavaScript</h3>
+  <div class="skill-bar"><span style="width: 75%"></span></div>
+</div>
+  <script>
+    fetch("https://api.github.com/users/MutaiKen0/repos?sort=updated")
+      .then(response => response.json())
+      .then(repos => {
+        let html = '';
+        repos.slice(0, 3).forEach(repo => {
+          html += `<div class="repo">
+            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+            <p>${repo.description || 'No description'}</p>
+          </div>`;
+        });
+        document.getElementById('github-projects').innerHTML = html;
+      });
+  </script>
+</section>
 <section class="skills">
   <h2>Skills</h2>
   <div class="skill-icons">
@@ -54,5 +79,6 @@
     document.body.classList.toggle('dark-mode');
   });
 </script>
+
 </body>
 </html>
