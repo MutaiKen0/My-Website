@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #444;
+}
+
+.links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background: #0077b5; /* LinkedIn blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.links a:first-child {
+  background: #333; /* GitHub black */
+}
+
+.links a:hover {
+  opacity: 0.8;
+}
