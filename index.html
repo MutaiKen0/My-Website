@@ -6,9 +6,15 @@
   <title>Kimtai Kenny | Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <img src="assets/profile.jpg" alt="Kimtai" width="150" style="border-radius: 50%;">
+ <img src="assets/profile.jpg" alt="Your Name" class="profile-pic">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<script>
+  const toggle = document.getElementById('darkModeToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
 <body>
   <div class="container">
     <header>
@@ -30,6 +36,15 @@
     <li>JavaScript</li>
     <li>Git</li>
   </ul>
+</section>
+<button id="darkModeToggle">🌙 Dark Mode</button>
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="skill-icons">
+    <span title="HTML5">📄</span>
+    <span title="CSS3">🎨</span>
+    <span title="JavaScript">⚡</span>
+  </div>
 </section>
     
     <section class="links">

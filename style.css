@@ -56,3 +56,17 @@ h1 {
 .links a:hover {
   opacity: 0.8;
 }
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid #0077b5; /* LinkedIn blue */
+}
+.skill-icons span {
+  font-size: 2rem;
+  margin: 0 10px;
+  cursor: help; /* Shows tooltip on hover */
+}
+.dark-mode {
+  background: #222;
+  color: white;
+}
