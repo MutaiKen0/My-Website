@@ -58,6 +58,51 @@ h1 {
   margin: 10px 0; 
   border-radius: 5px; 
 }
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Profile Image */
+.profile-pic {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border: 3px solid #0077b5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: #222;
+  color: white;
+}
+.dark-mode .container {
+  background: #333;
+}
+.dark-mode a {
+  color: #4da6ff;
+}
+
+/* Existing styles (keep your current skill bars, etc.) */
 .skill-bar { 
   height: 20px; 
   background: #e0e0e0; 
