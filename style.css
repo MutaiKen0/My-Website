@@ -89,6 +89,80 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+/* ===== Footer Styles ===== */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #4da6ff;
+}
+
+/* ===== Enhanced Responsiveness ===== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+  .left-column, .right-column {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .skill-bar-container {
+    width: 100%;
+  }
+  
+  footer {
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== Dark Mode Footer ===== */
+.dark-mode footer {
+  background: #111;
+  border-top: 1px solid #444;
+}
 
 /* Dark Mode */
 .dark-mode {

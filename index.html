@@ -6,6 +6,8 @@
   <title>Kimtai Kenny | Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <button id="darkModeToggle">🌙 Dark Mode</button>
@@ -16,9 +18,9 @@
       <section class="skills">
         <h2>Skills</h2>
         <div class="skill-icons">
-          <span title="HTML5">📄</span>
-          <span title="CSS3">🎨</span>
-          <span title="JavaScript">⚡</span>
+          <i class="fab fa-html5" title="HTML5"></i>
+          <i class="fab fa-css3-alt" title="CSS3"></i>
+          <i class="fab fa-js" title="JavaScript"></i>
         </div>
         <div class="skill-bar-container">
           <h3>HTML/CSS</h3>
@@ -54,18 +56,41 @@
     <div class="right-column">
       <section class="links">
         <h2>Connect With Me</h2>
-        <a href="https://github.com/MutaiKen0" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/Kenedy Kirui" target="_blank">LinkedIn</a>
+        <a href="https://github.com/MutaiKen0" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/Kenedy Kirui" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
       </section>
     </div>
   </div>
+
+  <!-- New Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2023 Kimtai Kenny. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fas fa-file-alt"></i> Resume</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     // Dark Mode Toggle
     const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
+      // Save preference to localStorage
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
 
     // GitHub Projects
     fetch("https://api.github.com/users/MutaiKen0/repos?sort=updated")
